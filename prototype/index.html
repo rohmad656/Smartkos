@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Smartkos — Temukan kos yang pas, tanpa nebak</title>
+<meta name="description" content="Platform cari kos pintar untuk mahasiswa & perantau. Peta akurat, filter jujur, chat langsung pemilik.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Lompat ke konten</a>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#" aria-label="Smartkos beranda">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-type">smartkos</span>
+      <span class="brand-sub">cari kos • peta • chat</span>
+    </a>
+    <nav aria-label="Navigasi utama" class="nav-links">
+      <a href="#listing">Cari Kos</a>
+      <a href="#peta">Peta</a>
+      <a href="#pemilik">Untuk Pemilik</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn ghost" href="#">Masuk</a>
+      <a class="btn solid" href="#listing">Cari sekarang</a>
+    </div>
+    <button class="menu" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO: split search + live map -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="trust-row">
+          <span class="dot"></span>
+          <span>12.400+ kamar terverifikasi • foto sesuai asli • update harian</span>
+        </div>
+        <h1>Kos yang pas,<br><em>nggak pakai nebak.</em></h1>
+        <p class="lead">Smartkos baca peta kampus, budget, dan kebiasaan kamu. Filter jujur, jarak jalan kaki real, dan chat langsung pemilik — bukan admin bot.</p>
+
+        <form class="search-panel" role="search" aria-label="Cari kos" onsubmit="return false">
+          <div class="search-main">
+            <label class="field grow">
+              <span>Kampus / area</span>
+              <input id="q" type="text" placeholder="UGM, Undip, UI, Tebet..." value="UGM — Pogung" />
+            </label>
+            <label class="field">
+              <span>Budget</span>
+              <select aria-label="Budget">
+                <option>800rb – 1,2jt</option>
+                <option selected>1jt – 1,8jt</option>
+                <option>1,8jt – 2,5jt</option>
+              </select>
+            </label>
+            <button class="btn solid search-btn" type="submit">Cari</button>
+          </div>
+          <div class="chips" aria-label="Filter cepat">
+            <button class="chip is-on" type="button">Jalan kaki &lt;10 menit</button>
+            <button class="chip" type="button">Kamar mandi dalam</button>
+            <button class="chip" type="button">Putri saja</button>
+            <button class="chip" type="button">Bisa pasutri</button>
+            <button class="chip" type="button">Ada dapur</button>
+          </div>
+          <p class="hint">Tip: geser pin di peta untuk lihat jarak jalan kaki, bukan garis lurus.</p>
+        </form>
+
+        <div class="proof">
+          <div class="avatars" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p><strong>4,8/5</strong> dari 3.241 penghuni • Rata-rata dapat kos dalam <strong>2,1 hari</strong></p>
+        </div>
+      </div>
+
+      <div class="hero-map" id="peta" aria-label="Pratinjau peta">
+        <div class="map-frame">
+          <div class="map-grid" aria-hidden="true"></div>
+          <div class="map-pin pin-a"><span>Rp1,2jt</span></div>
+          <div class="map-pin pin-b"><span>Rp1,45jt</span></div>
+          <div class="map-pin pin-c is-active"><span>Rp1,35jt • 6 menit</span></div>
+          <div class="map-card">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=400&auto=format&fit=crop" alt="Kamar kos pintu kayu" />
+            <div>
+              <h3>Kos Pogung Asri — Putri</h3>
+              <p>6 menit jalan ke FT UGM • Dapur bersama • Parkir luas</p>
+              <div class="price">Rp1.350.000 <small>/ bulan</small> <span class="tag">Terverifikasi</span></div>
+            </div>
+          </div>
+          <div class="map-legend">
+            <span><i class="lg lake"></i> &lt;10 menit jalan</span>
+            <span><i class="lg sun"></i> Pilihan Smartkos</span>
+          </div>
+        </div>
+        <ul class="door-strip" aria-hidden="true">
+          <li></li><li></li><li class="on"></li><li></li><li></li><li></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bar">
+    <div class="wrap bar-inner">
+      <span>Dipercaya di 45 area kampus</span>
+      <span class="bar-items">UGM • UI • ITB • Undip • Unair • UB • Unpad • Udayana</span>
+      <span class="check">✓ Foto & harga dicek tim lapangan</span>
+    </div>
+  </section>
+
+  <!-- LISTING -->
+  <section class="listing" id="listing">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Pilihan yang lewat kurasi, bukan asal banyak.</h2>
+          <p>Kartu pakai tinggi berbeda meniru deret pintu kos. Tinggi = info lebih lengkap, bukan dekorasi.</p>
+        </div>
+        <div class="head-actions">
+          <label class="field small">
+            <span>Urutkan</span>
+            <select id="sort"><option>Jarak terdekat</option><option>Harga terendah</option><option>Rating tertinggi</option></select>
+          </label>
+          <a class="btn ghost" href="#">Lihat peta penuh</a>
+        </div>
+      </div>
+
+      <div class="kos-grid" id="kosGrid">
+        <!-- cards injected by JS, fallback static -->
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="how">
+    <div class="wrap">
+      <h2>Cara kerja — tiga langkah, tanpa drama.</h2>
+      <div class="how-grid">
+        <article>
+          <div class="step-icon">◎</div>
+          <h3>1. Geser & filter jujur</h3>
+          <p>Peta hitung rute jalan kaki. Filter “mandi dalam” hanya muncul kalau foto & deskripsi cocok.</p>
+        </article>
+        <article>
+          <div class="step-icon">◫</div>
+          <h3>2. Chat langsung pemilik</h3>
+          <p>Tidak lewat admin. Kamu tanya aturan, jam malam, dan biaya tambahan — dijawab pemilik.</p>
+        </article>
+        <article>
+          <div class="step-icon">▭</div>
+          <h3>3. Kunci kamar tanpa DP ganda</h3>
+          <p>Booking fee transparan, kwitansi digital, dan pengingat jatuh tempo. Batal? Dana kembali H-3.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNER -->
+  <section class="owner" id="pemilik">
+    <div class="wrap owner-grid">
+      <div>
+        <h2>Untuk pemilik kos yang capek jawab chat berulang.</h2>
+        <p>Upload sekali, Smartkos rapikan: foto auto-crop pintu, harga musiman, dan template balasan cepat. Kalender isi terhubung ke semua listing.</p>
+        <ul class="owner-list">
+          <li>Verifikasi lapangan gratis untuk 10 kamar pertama</li>
+          <li>Anti double-booking — satu kalender untuk semua platform</li>
+          <li>Laporan hunian & saran harga berbasis area</li>
+        </ul>
+        <a class="btn solid" href="#">Daftarkan kos</a>
+      </div>
+      <div class="owner-card">
+        <div class="cal-head">Kalender Pogung Asri • April</div>
+        <div class="cal">
+          <span>1</span><span>2</span><span class="booked">3</span><span class="booked">4</span><span>5</span><span>6</span><span class="hold">7</span>
+          <span>8</span><span>9</span><span>10</span><span class="booked">11</span><span>12</span><span>13</span><span>14</span>
+          <span>15</span><span class="free">16</span><span class="free">17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+        </div>
+        <div class="cal-legend"><span><i class="lg booked"></i> Terisi</span><span><i class="lg hold"></i> Ditahan</span><span><i class="lg free"></i> Kosong</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap quote-inner">
+      <blockquote>“Akhirnya nemu kos yang jaraknya beneran 7 menit jalan, bukan 7 menit naik motor. Chat pemiliknya juga sat-set.”</blockquote>
+      <p>— Aurel, Maba Psikologi UGM, Pogung</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand foot-brand"><span class="brand-mark"></span><span>smartkos</span></div>
+      <p>Teman cari kos sejak 2024. Kantor: Jl. Kaliurang Km 5, Sleman. CS 08:00–21:00 WIB.</p>
+    </div>
+    <div>
+      <h4>Jelajahi</h4>
+      <a href="#listing">Cari kos</a><a href="#peta">Peta kampus</a><a href="#">Bantuan</a>
+    </div>
+    <div>
+      <h4>Pemilik</h4>
+      <a href="#pemilik">Daftarkan kos</a><a href="#">Panduan foto</a><a href="#">Harga wajar area</a>
+    </div>
+    <div>
+      <h4>Hubungi</h4>
+      <a href="#">WhatsApp</a><a href="#">Instagram</a><a href="#">Syarat & privasi</a>
+    </div>
+  </div>
+  <p class="copy">© 2026 Smartkos. Foto contoh dari pemilik terverifikasi. Harga dapat berubah.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
